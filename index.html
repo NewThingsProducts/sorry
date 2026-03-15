@@ -1,0 +1,196 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sorry Hania ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.container{
+z-index:2;
+}
+
+h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+p{
+font-size:22px;
+max-width:600px;
+margin:auto;
+}
+
+button{
+padding:15px 30px;
+margin:15px;
+font-size:20px;
+border:none;
+border-radius:40px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.yes{
+background:white;
+color:#ff4f81;
+}
+
+.no{
+background:#ff4f81;
+color:white;
+position:relative;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+.hidden{
+display:none;
+margin-top:20px;
+font-size:24px;
+}
+
+.heart{
+position:absolute;
+color:white;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
+}
+
+.loveletter{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+color:#ff4f81;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+display:none;
+max-width:500px;
+}
+
+.loveletter button{
+background:#ff4f81;
+color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>I'm Sorry Hania 💔</h1>
+
+<p>
+Hania, I know I made a mistake.  
+I never wanted to hurt you.  
+You mean the world to me and I truly regret it.  
+Please forgive me ❤️  
+</p>
+
+<button class="yes" onclick="forgive()">Yes I forgive you</button>
+<button class="no" onmouseover="moveButton()">No 😤</button>
+
+<div id="message" class="hidden">
+Yayyy! Thank you Hania 😭❤️  
+I promise I'll always take care of you.  
+– Yours forever, Yazdan
+</div>
+
+<br>
+
+<button onclick="openLetter()">Read My Love Letter 💌</button>
+
+</div>
+
+<div class="loveletter" id="letter">
+<h2>Dear Hania ❤️</h2>
+<p>
+I'm really sorry for what I did.  
+You are the most important person in my life.  
+I promise to learn from my mistake and be better for you.  
+Please give me another chance.
+</p>
+
+<p>
+Love always,<br>
+Yazdan
+</p>
+
+<button onclick="closeLetter()">Close</button>
+</div>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5f3a4cfa2b.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function forgive(){
+document.getElementById("message").style.display="block";
+}
+
+function moveButton(){
+let btn=document.querySelector(".no");
+btn.style.position="absolute";
+btn.style.top=Math.random()*80+"%";
+btn.style.left=Math.random()*80+"%";
+}
+
+function openLetter(){
+document.getElementById("letter").style.display="block";
+}
+
+function closeLetter(){
+document.getElementById("letter").style.display="none";
+}
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+10)+"px";
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
+```
